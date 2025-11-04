@@ -14,5 +14,7 @@
   "vim-yank-highlight",
   "cm-typewriter-scroll-obsidian",
   "tag-wrangler",
-  "obsidian-tidy-footnotes"
+  "obsidian-tidy-footnotes",
+  "editor-width-slider",
+  "novel-word-count"
 ]

@@ -1,11 +1,18 @@
+---
+created: 2025-11-04
+modified: 2025-11-04
+note-type:
+aliases: []
+cssclasses:
+title: The Ultimate Prompt Engineering Guide
+---
 # The Ultimate Prompt Engineering Guide
 ## Research-Backed Edition (2024-2025)
 
-**Based on:** 561 sources including academic papers, industry studies, and real-world implementations  
+**Based on:** 561 sources including academic papers, industry studies, and real-world implementations
 **Comprehensive Coverage:** Universal principles, platform-specific optimization, advanced techniques, domain applications, evaluation methods, and failure prevention
 
 ---
-
 ## Executive Summary
 
 This guide synthesizes the definitive research on prompt engineering effectiveness. Key findings:
@@ -17,7 +24,6 @@ This guide synthesizes the definitive research on prompt engineering effectivene
 - **95% of AI pilots fail due to poor prompts** - systematic engineering prevents this
 
 ---
-
 ## Part 1: Universal Principles (Works Across ALL Models)
 
 ### The Foundation: Clarity and Specificity
@@ -71,7 +77,7 @@ This guide synthesizes the definitive research on prompt engineering effectivene
 | **Chain-of-Thought** | 89-95% | Logical reasoning | High |
 | **Few-Shot** | 80-92% | Classification, patterns | High |
 
-### Context Windows: The Reality vs Claims
+### Context Windows: The Reality Vs Claims
 
 **Critical finding:** Models claiming 128K+ tokens show **significant degradation beyond 20-30K**.
 
@@ -97,6 +103,7 @@ This guide synthesizes the definitive research on prompt engineering effectivene
 - Format constraints: 50.6% reduction in extraneous content
 
 **Template:**
+
 ```
 Output format:
 - Executive summary (2-3 sentences)
@@ -111,10 +118,10 @@ Output format:
 
 | Framing | Example | Impact |
 |---------|---------|--------|
-| Positive | "What strategies successfully improve..." | 42% higher actionability |
-| Negative | "Why did this approach fail..." | Can trigger defensive responses |
-| Neutral | "What factors influenced..." | 38% better objectivity |
-| Leading | "Obviously, the best solution..." | Reduces critical analysis |
+| Positive | "What strategies successfully improve…" | 42% higher actionability |
+| Negative | "Why did this approach fail…" | Can trigger defensive responses |
+| Neutral | "What factors influenced…" | 38% better objectivity |
+| Leading | "Obviously, the best solution…" | Reduces critical analysis |
 
 **Working memory principle:**
 - Break tasks into **5±2 steps** (human cognitive limit applies to models)
@@ -122,7 +129,6 @@ Output format:
 - Sequential processing improves accuracy by 35%
 
 ---
-
 ## Part 2: Platform-Specific Optimization
 
 ### Claude (Anthropic)
@@ -151,6 +157,7 @@ Output format:
 - Best for: Analytical depth, long-context reasoning, structured analysis
 
 **Example XML structure:**
+
 ```xml
 <task>
 Draft Q2 financial report for investors
@@ -197,6 +204,7 @@ Investors value: Transparency and actionable insights
 - Coding: Reliable, well-formatted code
 
 **System message pattern:**
+
 ```json
 {
   "role": "system",
@@ -205,6 +213,7 @@ Investors value: Transparency and actionable insights
 ```
 
 **Function calling pattern:**
+
 ```json
 {
   "type": "function",
@@ -250,6 +259,7 @@ Investors value: Transparency and actionable insights
 - Best for: Multimodal tasks, massive document analysis, factual accuracy
 
 **Multimodal pattern:**
+
 ```
 [Image of handwritten sales notes]
 
@@ -257,6 +267,7 @@ Text: "How much revenue did we generate? Explain your reasoning."
 ```
 
 **Reasoning control (Gemini 2.5):**
+
 ```python
 thinking_config=ThinkingConfig(thinking_budget=2048)  # Deep reasoning
 # Or use -1 for dynamic (model decides based on complexity)
@@ -271,6 +282,7 @@ thinking_config=ThinkingConfig(thinking_budget=2048)  # Deep reasoning
 ### Platform Performance Comparison
 
 **Coding:**
+
 | Platform | SWE-Bench | Aider | Notes |
 |----------|-----------|-------|-------|
 | Claude | 62-70% | ~67% | Best code generation accuracy |
@@ -288,7 +300,6 @@ thinking_config=ThinkingConfig(thinking_budget=2048)  # Deep reasoning
 3. Gemini: Most vulnerable (all 12 tested attacks succeeded)
 
 ---
-
 ## Part 3: Advanced Techniques
 
 ### Chain-of-Thought (CoT): The Modern Reality
@@ -408,7 +419,6 @@ thinking_config=ThinkingConfig(thinking_budget=2048)  # Deep reasoning
 - Hybrid search: 15-25% better than naive retrieval
 
 ---
-
 ## Part 4: Domain-Specific Strategies
 
 ### Code Generation & Debugging
@@ -419,7 +429,7 @@ thinking_config=ThinkingConfig(thinking_budget=2048)  # Deep reasoning
 - Tests function as executable specifications
 
 **Best practices:**
-- Role-based: "Act as senior security engineer specializing in..."
+- Role-based: "Act as senior security engineer specializing in…"
 - Explicit context: Language, performance requirements, architectural patterns
 - FlowGenScrum: 75.2% on HumanEval (multi-agent process)
 - PairCoder: 12-162% improvement (collaborative framework)
@@ -441,6 +451,7 @@ thinking_config=ThinkingConfig(thinking_budget=2048)  # Deep reasoning
 - Mirrors professional screenwriting workflows
 
 **Style specification:**
+
 ```
 Write a poem about loss in the voice of a grieving parent, using concrete 
 imagery (not abstract metaphors), using short sentences that feel like 
@@ -482,7 +493,7 @@ breathlessness. Emotional arc: shock → acceptance by final stanza.
 - Then: Answer
 - Improves precision on complex queries
 
-**CRITICAL WARNING:** 
+**CRITICAL WARNING:**
 - **LLMs hallucinate statistics** - always verify numbers against source data
 - Well-written but unverified analysis is worse than acknowledged uncertainty
 - Human oversight essential for citation management
@@ -509,7 +520,7 @@ breathlessness. Emotional arc: shock → acceptance by final stanza.
 
 **Socratic questioning:**
 - Prompt to guide discovery, not provide answers
-- "Instead of telling the answer, ask questions that help them discover..."
+- "Instead of telling the answer, ask questions that help them discover…"
 - Adaptive difficulty based on responses
 
 **Concept explanation:**
@@ -524,7 +535,6 @@ breathlessness. Emotional arc: shock → acceptance by final stanza.
 - Answer key with explanations
 
 ---
-
 ## Part 5: Evaluation & Iteration
 
 ### The 8 Dimensions of Prompt Quality
@@ -615,7 +625,6 @@ Modern practice evaluates across **8+ complementary metrics**:
 6. Repeat
 
 ---
-
 ## Part 6: Failures & Anti-Patterns
 
 ### Why 95% of AI Pilots Fail
@@ -625,12 +634,14 @@ Modern practice evaluates across **8+ complementary metrics**:
 ### Common Failure Modes
 
 **1. Vague Instructions (40% of failures)**
+
 ```
 ❌ Bad: "Help me with a presentation"
 ✅ Good: "Create a 10-slide investor presentation for Q2 results covering revenue growth (+23%), new customer acquisition (150 enterprise), and Q3 projections. Use professional tone, include data visualizations, focus on ROI metrics investors care about."
 ```
 
 **2. Contradictory Constraints**
+
 ```
 ❌ Bad: "Write a comprehensive summary in 50 words that covers all details"
 (Comprehensive ≠ 50 words)
@@ -643,18 +654,21 @@ Modern practice evaluates across **8+ complementary metrics**:
 - More context ≠ better results
 
 **4. Poor Example Selection**
+
 ```
 ❌ Bad: Generic, unrelated examples
 ✅ Good: Contextually aligned, task-specific examples (3-5 examples optimal)
 ```
 
 **5. Assuming Model Knowledge**
+
 ```
 ❌ Bad: "Analyze the Q2 report" (which report? what aspects?)
 ✅ Good: "Analyze the attached Q2 Financial Report focusing on: revenue trends, cost structure changes, and cash flow compared to Q1"
 ```
 
 **6. Format Ambiguity**
+
 ```
 ❌ Bad: "Give me the results"
 ✅ Good: "Provide results as:
@@ -702,6 +716,7 @@ Modern practice evaluates across **8+ complementary metrics**:
 ### Output Quality Problems
 
 **Inconsistent formatting:**
+
 ```
 ❌ Problem: "Format as JSON" but no schema provided
 ✅ Solution: Provide exact schema:
@@ -758,7 +773,6 @@ Modern practice evaluates across **8+ complementary metrics**:
 - Use privacy modes when available
 
 ---
-
 ## Quick Reference Guide
 
 ### Decision Tree: Which Technique When?
@@ -803,6 +817,7 @@ Modern practice evaluates across **8+ complementary metrics**:
 ### Prompt Template Library
 
 **Universal Structure:**
+
 ```
 Role: [Optional - specific expertise if relevant]
 
@@ -821,6 +836,7 @@ Output format: [Exact structure expected]
 ```
 
 **Code Generation:**
+
 ```
 You are a senior [language] engineer specializing in [domain].
 
@@ -842,6 +858,7 @@ Provide:
 ```
 
 **Creative Writing:**
+
 ```
 Write [content type] about [topic] in the voice of [persona].
 
@@ -857,6 +874,7 @@ Avoid: [specific things to exclude]
 ```
 
 **Analysis:**
+
 ```
 Analyze [subject/data] to determine:
 
@@ -916,38 +934,36 @@ Output format:
 | Factual accuracy | Gemini + grounding | Highest baseline | Similar cost |
 
 ---
-
 ## Platform Selection Guide
 
-### Use Claude When:
+### Use Claude When
 - Long-context analysis (200K tokens)
 - Structured analysis with XML tags
 - Security-critical applications
 - Deep reasoning required
 - Professional document analysis
 
-### Use ChatGPT When:
+### Use ChatGPT When
 - Creative content generation
 - Function calling / tool integration
 - Conversational AI applications
 - Versatile task handling
 - User-facing applications needing engaging tone
 
-### Use Gemini When:
+### Use Gemini When
 - Multimodal tasks (text + images + video)
 - Massive documents (1-2M tokens)
 - Code editing (highest performance)
 - Factual accuracy critical
 - Cost-sensitive applications
 
-### Multi-Platform Strategy:
+### Multi-Platform Strategy
 - Test critical prompts across all platforms
 - Use platform-specific optimizations
 - Consider ensemble approaches for high-stakes decisions
 - Monitor performance and costs
 
 ---
-
 ## Cost Optimization Strategies
 
 **Token efficiency:**
@@ -961,6 +977,7 @@ Output format:
 - Automated optimization (DSPy): 1-6% cost of manual iteration
 
 **Platform economics:**
+
 | Platform | Cost per 1K tokens (input/output) | Best Value For |
 |----------|-----------------------------------|----------------|
 | GPT-4o | $15/$60 | Creative, versatile |
@@ -968,7 +985,6 @@ Output format:
 | Gemini | $2.50/$10 | Massive docs, multimodal |
 
 ---
-
 ## Future-Proofing Your Prompts
 
 **Design for iteration:**
@@ -990,7 +1006,6 @@ Output format:
 - Stay current with research
 
 ---
-
 ## Conclusion: The Ultimate Prompt Engineering Mindset
 
 **Research-backed principles that matter:**
